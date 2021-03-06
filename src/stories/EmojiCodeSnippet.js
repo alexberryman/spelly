@@ -71,12 +71,13 @@ function EmojiCodeSnippet({value}) {
         let inputArray = value.split('');
 
         function buildCodeSnippet(c) {
-            return `:alphabet-white-${c}:`;
+            return <span key={offset}>:alphabet-white-{c}:</span>;
         }
-
+        let offset = 0;
         return inputArray.map(c => {
+            offset++;
             if (alphabetWhiteMapping.hasOwnProperty(c.toLowerCase())) return buildCodeSnippet(c);
-            if (c === ' ') return <pre className='d-inline'>{c}</pre>
+            if (c === ' ') return <span key={offset} className='d-inline'>{c}</span>
             return c;
         });
     }
@@ -86,7 +87,7 @@ function EmojiCodeSnippet({value}) {
             <div className='alert alert-dark'>
                 <h4 className='alert-heading'>Code</h4>
                 <hr/>
-                {getEmojiCodeSnippet()}
+                <pre>{getEmojiCodeSnippet()}</pre>
             </div>
             <span className="tip">Tip</span> use <span className='code'>⌘+⇧+v</span> to paste into slack
         </div>

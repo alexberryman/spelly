@@ -3,7 +3,7 @@ import {Page} from './stories/Page';
 
 function App() {
     return <div className="App">
-        <Page value={'hi'}/>
+        <Page/>
     </div>;
 }
 

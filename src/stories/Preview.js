@@ -70,14 +70,16 @@ function Preview({value}) {
         let inputArray = value.split('');
 
         function buildImg(c) {
-            return <img src={alphabetWhiteMapping[c.toLowerCase()]} alt={c} width='25px'
+            return <img key={offset} src={alphabetWhiteMapping[c.toLowerCase()]} alt={c} width='25px'
                         height='25px'/>;
         }
-
+        let offset = 0;
         return inputArray.map(c => {
+            offset++;
+            console.log(c, offset);
             if (alphabetWhiteMapping.hasOwnProperty(c.toLowerCase())) return buildImg(c);
-            if (c === ' ') return <pre className='d-inline'>{c}</pre>
-            return c;
+            if (c === ' ') return <span key={offset} className='d-inline'>{'\u00A0\u00A0'}</span>;
+            return <span key={offset} className='d-inline'>{c}</span>;
         });
     }
 
