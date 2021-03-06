@@ -82,7 +82,9 @@ function Preview({value}) {
     }
 
     return (
-        <div>
+        <div className='alert alert-light'>
+            <h4 className='alert-heading'>Preview</h4>
+            <hr/>
             {getEmoji()}
         </div>
 

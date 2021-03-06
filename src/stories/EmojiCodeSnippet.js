@@ -1,4 +1,5 @@
 import React from 'react';
+import './emojiCodeSnippet.css';
 import a from './assets/alphabet-white/a.png';
 import b from './assets/alphabet-white/b.png';
 import c from './assets/alphabet-white/c.png';
@@ -82,7 +83,12 @@ function EmojiCodeSnippet({value}) {
 
     return (
         <div>
-            {getEmojiCodeSnippet()}
+            <div className='alert alert-dark'>
+                <h4 className='alert-heading'>Code</h4>
+                <hr/>
+                {getEmojiCodeSnippet()}
+            </div>
+            <span className="tip">Tip</span> use <span className='code'>⌘+⇧+v</span> to paste into slack
         </div>
 
     );
