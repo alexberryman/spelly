@@ -1,11 +1,11 @@
 import React from 'react';
 import './header.css';
 
-import sLogo from './assets/s-logo.png';
-import pLogo from './assets/p.png';
-import eLogo from './assets/e.png';
-import lLogo from './assets/l.png';
-import yLogo from './assets/y.png';
+import sLogo from './assets/alphabet-white/s-logo.png';
+import pLogo from './assets/alphabet-white/p.png';
+import eLogo from './assets/alphabet-white/e.png';
+import lLogo from './assets/alphabet-white/l.png';
+import yLogo from './assets/alphabet-white/y.png';
 
 export const Header = ({user, onLogin, onLogout, onCreateAccount}) => (
     <header>
