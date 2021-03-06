@@ -24,9 +24,8 @@ export class Page extends React.Component {
             </div>
         );
     }
-    
+
     handleChange = event => {
-        console.log(event.target.value);
         this.setState({value: event.target.value})
     }
 }

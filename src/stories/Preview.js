@@ -76,9 +76,8 @@ function Preview({value}) {
         let offset = 0;
         return inputArray.map(c => {
             offset++;
-            console.log(c, offset);
             if (alphabetWhiteMapping.hasOwnProperty(c.toLowerCase())) return buildImg(c);
-            if (c === ' ') return <span key={offset} className='d-inline'>{'\u00A0\u00A0'}</span>;
+            if (c === ' ') return <span key={offset} className='d-inline'>{`\u00A0\u00A0\u00A0`}</span>;
             return <span key={offset} className='d-inline'>{c}</span>;
         });
     }

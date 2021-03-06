@@ -71,15 +71,20 @@ function EmojiCodeSnippet({value}) {
         let inputArray = value.split('');
 
         function buildCodeSnippet(c) {
-            return <span key={offset}>:alphabet-white-{c}:</span>;
+            return `:alphabet-white-${c}:`;
         }
-        let offset = 0;
+        let codeString = '';
         return inputArray.map(c => {
-            offset++;
-            if (alphabetWhiteMapping.hasOwnProperty(c.toLowerCase())) return buildCodeSnippet(c);
-            if (c === ' ') return <span key={offset} className='d-inline'>{c}</span>
-            return c;
+            if (alphabetWhiteMapping.hasOwnProperty(c.toLowerCase())) return codeString + buildCodeSnippet(c);
+            if (c === ' ') return codeString + `\u00A0\u00A0\u00A0`
+            return codeString + c;
         });
+    }
+
+    let emojiCodeSnippet = getEmojiCodeSnippet();
+
+    function handleClick() {
+        return navigator.clipboard.writeText(emojiCodeSnippet.join(''));
     }
 
     return (
@@ -87,7 +92,13 @@ function EmojiCodeSnippet({value}) {
             <div className='alert alert-dark'>
                 <h4 className='alert-heading'>Code</h4>
                 <hr/>
-                <pre>{getEmojiCodeSnippet()}</pre>
+                <div>
+                    {emojiCodeSnippet}
+                    <div>
+                        <button className='btn btn-primary' onClick={handleClick}>Copy</button>
+                    </div>
+                </div>
+
             </div>
             <span className="tip">Tip</span> use <span className='code'>⌘+⇧+v</span> to paste into slack
         </div>
