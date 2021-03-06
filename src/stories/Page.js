@@ -11,7 +11,7 @@ export class Page extends React.Component {
         let {value} = this.props;
         const showThings = value !== null && value.length;
         return (
-            <article>
+            <div>
                 <Header/>
 
                 <div>
@@ -21,7 +21,7 @@ export class Page extends React.Component {
                         { showThings ? <EmojiCodeSnippet value={value}/> : null}
                     </div>
                 </div>
-            </article>
+            </div>
         );
     }
 }
