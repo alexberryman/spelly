@@ -4,7 +4,7 @@ import { Page } from './Page';
 import * as TextareaStories from './Textarea.stories';
 
 export default {
-  title: 'Example/Page',
+  title: 'Site/Page',
   component: Page,
 };
 

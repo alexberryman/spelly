@@ -3,7 +3,7 @@ import Preview from './Preview';
 import * as Textarea from './Textarea.stories';
 
 export default {
-    title: 'Example/Preview',
+    title: 'Component/Preview',
     component: Preview,
 };
 

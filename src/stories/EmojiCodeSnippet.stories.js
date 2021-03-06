@@ -3,7 +3,7 @@ import EmojiCodeSnippet from './EmojiCodeSnippet';
 import * as Textarea from './Textarea.stories';
 
 export default {
-    title: 'Example/EmojiCodeSnippet',
+    title: 'Component/EmojiCodeSnippet',
     component: EmojiCodeSnippet,
 };
 
