@@ -7,9 +7,9 @@ import Preview from './Preview';
 import EmojiCodeSnippet from './EmojiCodeSnippet';
 
 export class Page extends React.Component {
-    state = {value: ''}
+    state = {value: this.props.value ? this.props.value : ''}
     render() {
-        const showThings = this.state.value !== null && this.state.value.length;
+        const showThings = this.state.value.length;
         return (
             <div>
                 <Header/>
