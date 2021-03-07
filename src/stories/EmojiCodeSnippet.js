@@ -71,7 +71,19 @@ function EmojiCodeSnippet({value}) {
         let inputArray = value.split('');
 
         function buildCodeSnippet(c) {
-            return `:alphabet-white-${c}:`;
+            switch (c){
+                case '!':
+                    return `:alphabet-white-exclamation:`;
+                case '#':
+                    return `:alphabet-white-hash:`;
+                case '@':
+                    return `:alphabet-white-at:`;
+                case '?':
+                    return `:alphabet-white-question:`;
+                default:
+                    return `:alphabet-white-${c}:`;
+            }
+
         }
         let codeString = '';
         return inputArray.map(c => {
