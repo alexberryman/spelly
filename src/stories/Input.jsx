@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    Box,
-    Button,
     chakra,
     FormControl,
     FormLabel,
@@ -34,38 +32,18 @@ export const Input = ({message, onChange,...props}) => {
                                    color={useColorModeValue('gray.700', 'gray.50')}>
                             Input
                         </FormLabel>
-                        <Textarea
-                            placeholder="Enter your message here to have it converted to emojis"
-                            defaultValue={message}
-                            mt={1}
-                            rows={3}
-                            shadow="sm"
-                            focusBorderColor="brand.400"
-                            fontSize={{sm: 'sm'}}
-                            onChange={onChange}
-                        />
+                        <Textarea placeholder="Enter your message here to have it converted to emojis"
+                                  defaultValue={message} mt={1} rows={3} shadow="sm" focusBorderColor="brand.400"
+                                  fontSize={{sm: 'sm'}} onChange={onChange}/>
                     </FormControl>
 
                     <FormControl as={GridItem} colSpan={[6, 3]}>
-                        <FormLabel
-                            for="client"
-                            fontSize="sm"
-                            fontWeight="md"
-                            color={useColorModeValue('gray.700', 'gray.50')}
-                        >
+                        <FormLabel for="client" fontSize="sm" fontWeight="md"
+                                   color={useColorModeValue('gray.700', 'gray.50')}>
                             Chat Client
                         </FormLabel>
-                        <Select
-                            id="client"
-                            name="client"
-                            defaultValue='Slack'
-                            mt={1}
-                            focusBorderColor="brand.400"
-                            shadow="sm"
-                            size="sm"
-                            w="full"
-                            rounded="md"
-                        >
+                        <Select id="client" name="client" defaultValue='Slack' mt={1} focusBorderColor="brand.400"
+                                shadow="sm" size="sm" w="full" rounded="md">
                             <option>Slack</option>
                         </Select>
                     </FormControl>

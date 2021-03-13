@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, chakra, IconButton, useColorMode, useColorModeValue, Flex, Link} from '@chakra-ui/react';
+import {Box, chakra, Flex, IconButton, Link, useColorMode, useColorModeValue} from '@chakra-ui/react';
 import {FaMoon, FaSun} from 'react-icons/fa';
 import sLogo from './assets/alphabet-white/s.png';
 import pLogo from './assets/alphabet-white/p.png';
@@ -25,16 +25,9 @@ export const Header = ({...props}) => {
                         <img src={yLogo} alt='spelly logo' width='52px' height='52px'/>
                     </Link>
                     <Box>
-                        <IconButton
-                            size="md"
-                            fontSize="lg"
-                            aria-label={`Switch to ${text} mode`}
-                            variant="ghost"
-                            color="current"
-                            ml={{base: '0', md: '3'}}
-                            onClick={toggleMode}
-                            icon={<SwitchIcon/>}
-                        />
+                        <IconButton size="md" fontSize="lg" aria-label={`Switch to ${text} mode`} variant="ghost"
+                                    color="current" ml={{base: '0', md: '3'}} onClick={toggleMode}
+                                    icon={<SwitchIcon/>}/>
                     </Box>
                 </Flex>
             </chakra.header>

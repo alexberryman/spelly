@@ -11,21 +11,13 @@ export default function Content(props) {
     return (
         <Box bg={useColorModeValue('gray.50', 'inherit')} p={10}>
             <Box>
-                <SimpleGrid
-                    display={{base: 'initial', md: 'grid'}}
-                    columns={{md: 3}}
-                    spacing={{md: 6}}
-                >
+                <SimpleGrid display={{base: 'initial', md: 'grid'}} columns={{md: 3}} spacing={{md: 6}}>
                     <GridItem colSpan={{md: 1}}>
                         <Box px={[4, 0]}>
                             <Heading fontSize="lg" fontWeight="md" lineHeight="6">
                                 Input
                             </Heading>
-                            <Text
-                                mt={1}
-                                fontSize="sm"
-                                color={useColorModeValue('gray.600', 'gray.400')}
-                            >
+                            <Text mt={1} fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')}>
                                 Enter the text you want to be converted to emojis!
                             </Text>
                         </Box>
@@ -38,21 +30,13 @@ export default function Content(props) {
 
             <Separator/>
             <Box mt={[10, 0]}>
-                <SimpleGrid
-                    display={{base: 'initial', md: 'grid'}}
-                    columns={{md: 3}}
-                    spacing={{md: 6}}
-                >
+                <SimpleGrid display={{base: 'initial', md: 'grid'}} columns={{md: 3}} spacing={{md: 6}}>
                     <GridItem colSpan={{md: 1}}>
                         <Box px={[4, 0]}>
                             <Heading fontSize="lg" fontWeight="medium" lineHeight="6">
                                 Preview
                             </Heading>
-                            <Text
-                                mt={1}
-                                fontSize="sm"
-                                color={useColorModeValue('gray.600', 'gray.400')}
-                            >
+                            <Text mt={1} fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')}>
                                 See a preview of what the emojis will look like in your chat client
                             </Text>
                         </Box>
@@ -66,21 +50,13 @@ export default function Content(props) {
             <Separator/>
 
             <Box mt={[10, 0]}>
-                <SimpleGrid
-                    display={{base: 'initial', md: 'grid'}}
-                    columns={{md: 3}}
-                    spacing={{md: 6}}
-                >
+                <SimpleGrid display={{base: 'initial', md: 'grid'}} columns={{md: 3}} spacing={{md: 6}}>
                     <GridItem colSpan={{md: 1}}>
                         <Box px={[4, 0]}>
                             <Heading fontSize="lg" fontWeight="medium" lineHeight="6">
                                 Output
                             </Heading>
-                            <Text
-                                mt={1}
-                                fontSize="sm"
-                                color={useColorModeValue('gray.600', 'gray.400')}
-                            >
+                            <Text mt={1} fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')}>
                                 Copy and Paste this code into your chat client.
                             </Text>
                         </Box>
