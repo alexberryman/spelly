@@ -4,7 +4,7 @@ Slack added some alphabet emojis that seemed pointless without an easy way to tu
 ## Use Spelly
 http://spelly.life
 
-##Tools and Resources used
+## Tools and Resources used
 ### React
 - [CodeWithMosh React Cource](https://codewithmosh.com/p/mastering-react): Simple course explaining how to get started
 - [CodeWithMosh Redux Cource](https://codewithmosh.com/p/mastering-react): Remove the mystery of Redux by pulling it out of React, and then putting it back in.
