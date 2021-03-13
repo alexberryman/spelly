@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Box, Code, Grid, Link, Text, VStack} from '@chakra-ui/react';
 import {ColorModeSwitcher} from '../../ColorModeSwitcher';
-import {Logo} from '../../Logo';
+import {Logo} from './Logo';
 
 export const ChakraSplash = ({ label, ...props }) => {
   return (
