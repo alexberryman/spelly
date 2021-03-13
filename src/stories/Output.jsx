@@ -1,5 +1,8 @@
 import React from 'react';
-import './emojiCodeSnippet.css';
+import PropTypes from 'prop-types';
+import {Box, Button, Stack, useClipboard, useColorModeValue} from '@chakra-ui/react';
+import {CopyIcon} from '@chakra-ui/icons';
+
 import a from './assets/alphabet-white/a.png';
 import b from './assets/alphabet-white/b.png';
 import c from './assets/alphabet-white/c.png';
@@ -64,14 +67,17 @@ const alphabetWhiteMapping = {
     '?': question,
 };
 
-function EmojiCodeSnippet({value}) {
+
+export const Output = ({message, ...props}) => {
+    let emojiCodeSnippet = getEmojiCodeSnippet();
+    const {onCopy} = useClipboard(emojiCodeSnippet);
 
     function getEmojiCodeSnippet() {
-        if (value === null) return <div/>;
-        let inputArray = value.split('');
+        if (message === null) return <div/>;
+        let inputArray = message.split('');
 
         function buildCodeSnippet(c) {
-            switch (c){
+            switch (c) {
                 case '!':
                     return `:alphabet-white-exclamation:`;
                 case '#':
@@ -85,37 +91,61 @@ function EmojiCodeSnippet({value}) {
             }
 
         }
+
         let codeString = '';
         return inputArray.map(c => {
-            if (alphabetWhiteMapping.hasOwnProperty(c.toLowerCase())) return codeString + buildCodeSnippet(c);
-            if (c === ' ') return codeString + `\u00A0\u00A0\u00A0`
+            if (alphabetWhiteMapping.hasOwnProperty(c.toLowerCase())) return codeString + buildCodeSnippet(c.toLowerCase());
+            if (c === ' ') return codeString + `\u00A0\u00A0\u00A0`;
             return codeString + c;
         });
     }
 
-    let emojiCodeSnippet = getEmojiCodeSnippet();
-
-    function handleClick() {
-        return navigator.clipboard.writeText(emojiCodeSnippet.join(''));
-    }
-
     return (
-        <div>
-            <div className='alert alert-dark'>
-                <h4 className='alert-heading'>Code</h4>
-                <hr/>
-                <div>
-                    {emojiCodeSnippet}
-                    <div>
-                        <button className='btn btn-primary' onClick={handleClick}>Copy</button>
-                    </div>
-                </div>
-
-            </div>
-            <span className="tip">Tip</span> use <span className='code'>⌘+⇧+v</span> to paste into slack
-        </div>
-
+        <Box
+            shadow="base"
+            rounded={[null, 'md']}
+            overflow={{sm: 'hidden'}}
+        >
+            <Stack
+                px={4}
+                py={5}
+                bg={useColorModeValue('white', 'gray.700')}
+                spacing={6}
+                p={{sm: 6}}
+            >
+                <p color={useColorModeValue('gray.50', 'gray.900')}>{emojiCodeSnippet}</p>
+            </Stack>
+            <Box
+                px={{base: 4, sm: 6}}
+                py={3}
+                bg={useColorModeValue('gray.50', 'gray.900')}
+                textAlign="right"
+            >
+                <Button
+                    bg='purple'
+                    color='white'
+                    _hover={{bg: 'green', shadow: ''}}
+                    fontWeight="md"
+                    onClick={onCopy}
+                >
+                    <Stack direction='horizontal'>
+                    <CopyIcon/>
+                    <Box>
+                        Copy
+                    </Box>
+                    </Stack>
+                </Button>
+            </Box>
+        </Box>
     );
-}
+};
 
-export default EmojiCodeSnippet;
+Output.propTypes = {
+    message: PropTypes.string.isRequired,
+    onCopy: PropTypes.func,
+};
+
+Output.defaultProps = {
+    message: '',
+    onCopy: undefined,
+};

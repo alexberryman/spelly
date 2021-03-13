@@ -1,20 +1,24 @@
 {
   "name": "spelly",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "bootstrap": "^4.6.0",
+    "@chakra-ui/icons": "^1.0.6",
+    "@chakra-ui/react": "^1.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@testing-library/jest-dom": "^5.9.0",
+    "@testing-library/react": "^10.2.1",
+    "@testing-library/user-event": "^12.0.2",
+    "framer-motion": ">=3.0.0",
     "react": "^17.0.1",
-    "react-bootstrap": "^1.5.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^3.0.0",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^0.2.2"
   },
   "scripts": {
-    "start": "PORT=3341 react-scripts start",
+    "start": "PORT=3222 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -22,10 +26,7 @@
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [

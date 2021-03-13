@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {Box, Button, Stack, useColorModeValue} from '@chakra-ui/react';
 import a from './assets/alphabet-white/a.png';
 import b from './assets/alphabet-white/b.png';
 import c from './assets/alphabet-white/c.png';
@@ -63,11 +65,9 @@ const alphabetWhiteMapping = {
     '?': question,
 };
 
-function Preview({value}) {
-
+export const Preview = ({message, ...props}) => {
     function getEmoji() {
-        if (value === null) return <div/>;
-        let inputArray = value.split('');
+        let inputArray = message.split('');
 
         function buildImg(c) {
             return <img key={offset} src={alphabetWhiteMapping[c.toLowerCase()]} alt={c} width='25px'
@@ -83,13 +83,43 @@ function Preview({value}) {
     }
 
     return (
-        <div className='alert alert-light'>
-            <h4 className='alert-heading'>Preview</h4>
-            <hr/>
-            {getEmoji()}
-        </div>
-
+        <Box
+            shadow="base"
+            rounded={[null, 'md']}
+            overflow={{sm: 'hidden'}}
+        >
+            <Stack
+                px={4}
+                py={5}
+                bg={useColorModeValue('white', 'gray.700')}
+                spacing={6}
+                p={{sm: 6}}
+            >
+                <Stack direction='horizontal'>{getEmoji()}</Stack>
+            </Stack>
+            <Box
+                px={{base: 4, sm: 6}}
+                py={3}
+                bg={useColorModeValue('gray.50', 'gray.900')}
+                textAlign="right"
+            >
+                <Button
+                    bg='purple'
+                    color='white'
+                    _hover={{bg: 'blue', shadow: ''}}
+                    fontWeight="md"
+                >
+                    Export Image
+                </Button>
+            </Box>
+        </Box>
     );
-}
+};
 
-export default Preview;
+Preview.propTypes = {
+    message: PropTypes.string.isRequired,
+};
+
+Preview.defaultProps = {
+    message: '',
+};
