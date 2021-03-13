@@ -71,21 +71,6 @@ export const Input = ({message, onChange,...props}) => {
                     </FormControl>
                 </SimpleGrid>
             </Stack>
-            <Box
-                px={{base: 4, sm: 6}}
-                py={3}
-                bg={useColorModeValue('gray.50', 'gray.900')}
-                textAlign="right"
-            >
-                <Button
-                    bg='purple'
-                    color='white'
-                    _hover={{bg: 'red', shadow: ''}}
-                    fontWeight="md"
-                >
-                    Clear
-                </Button>
-            </Box>
         </chakra.form>
 
     );
