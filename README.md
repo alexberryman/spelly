@@ -4,7 +4,7 @@ Slack added some alphabet emojis that seemed pointless without an easy way to tu
 ## Use Spelly
 http://spelly.life
 
-## Tools and Resources used
+## Tools and Resources Used
 ### React
 - [CodeWithMosh React Cource](https://codewithmosh.com/p/mastering-react): Simple course explaining how to get started
 - [CodeWithMosh Redux Cource](https://codewithmosh.com/p/mastering-react): Remove the mystery of Redux by pulling it out of React, and then putting it back in.
@@ -14,3 +14,6 @@ http://spelly.life
 - [Choc UI](https://choc-ui.tech/): Skip having to learn Chakra UI by editing good-looking components to match my needs
 ### Production Deployment
 - [Deploying create-react-app to S3 and CloudFront](https://wolovim.medium.com/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af): Simple guide to get the React `build/` directory copied over to an S3 bucket and host it with the CloudFrontCDN
+
+## Evolution of the UI
+- [History of the UI](./docs/History%20of%20UI.md)
