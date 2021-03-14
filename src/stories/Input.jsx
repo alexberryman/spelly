@@ -5,14 +5,17 @@ import {
     FormControl,
     FormLabel,
     GridItem,
-    Select,
+    Button,
+    ButtonGroup,
     SimpleGrid,
     Stack,
     Textarea,
     useColorModeValue,
 } from '@chakra-ui/react';
+import {FaDiscord, FaSlack} from 'react-icons/fa';
 
-export const Input = ({message, onChange,...props}) => {
+export const Input = ({message, onMessageChange, chatClient, onClientClick, ...props}) => {
+    console.log('chatClient', chatClient);
     return (
         <chakra.form
             shadow="base"
@@ -34,7 +37,7 @@ export const Input = ({message, onChange,...props}) => {
                         </FormLabel>
                         <Textarea placeholder="Enter your message here to have it converted to emojis"
                                   defaultValue={message} mt={1} rows={3} shadow="sm" focusBorderColor="brand.400"
-                                  fontSize={{sm: 'sm'}} onChange={onChange}/>
+                                  fontSize={{sm: 'sm'}} onChange={onMessageChange}/>
                     </FormControl>
 
                     <FormControl as={GridItem} colSpan={[6, 3]}>
@@ -42,10 +45,10 @@ export const Input = ({message, onChange,...props}) => {
                                    color={useColorModeValue('gray.700', 'gray.50')}>
                             Chat Client
                         </FormLabel>
-                        <Select id="client" name="client" defaultValue='Slack' mt={1} focusBorderColor="brand.400"
-                                shadow="sm" size="sm" w="full" rounded="md">
-                            <option>Slack</option>
-                        </Select>
+                        <ButtonGroup isAttached={true} spacing={0}>
+                            <Button id='slack' leftIcon={<FaSlack />} isActive={chatClient === 'slack'} _active={{bg: 'purple'}} onClick={onClientClick}>Slack</Button>
+                            <Button id='discord' leftIcon={<FaDiscord />} isActive={chatClient === 'discord'} _active={{bg: 'purple'}} onClick={onClientClick}>Discord</Button>
+                        </ButtonGroup>
                     </FormControl>
                 </SimpleGrid>
             </Stack>
@@ -56,10 +59,12 @@ export const Input = ({message, onChange,...props}) => {
 
 Input.propTypes = {
     message: PropTypes.string.isRequired,
-    onChange: PropTypes.func,
+    onMessageChange: PropTypes.func,
+    onClientClick: PropTypes.func,
 };
 
 Input.defaultProps = {
     message: '',
-    onChange: undefined,
+    onMessageChange: undefined,
+    onClientClick: undefined,
 };

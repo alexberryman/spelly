@@ -23,7 +23,7 @@ export default function Content(props) {
                         </Box>
                     </GridItem>
                     <GridItem mt={[5, null, 0]} colSpan={{md: 2}}>
-                        <Input message={props.message} onChange={props.onChange}/>
+                        <Input message={props.message} onMessageChange={props.onMessageChange} chatClient={props.chatClient} onClientClick={props.onClientClick}/>
                     </GridItem>
                 </SimpleGrid>
             </Box>
@@ -72,10 +72,12 @@ export default function Content(props) {
 
 Content.propTypes = {
     message: PropTypes.string.isRequired,
-    onChange: PropTypes.func,
+    onMessageChange: PropTypes.func,
+    onClientClick: PropTypes.func,
 };
 
 Content.defaultProps = {
     message: '',
-    onChange: undefined,
+    onMessageChange: undefined,
+    onClientClick: undefined,
 };

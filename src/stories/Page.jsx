@@ -5,17 +5,27 @@ import {Header} from './Header';
 import Content from './Content';
 
 export class Page extends React.Component {
-    state = {message: this.props.message ? this.props.message : ''};
+    state = {
+        message: this.props.message ? this.props.message : '',
+        chatClient: this.props.chatClient ? this.props.chatClient : 'discord',
+    };
 
-    handleChange = event => {
-        this.setState({message: event.target.value})
-    }
+    handleMessageChange = event => {
+        this.setState({message: event.target.value});
+    };
+
+    handleClientClick = event => {
+        console.log('clientClick', event);
+        this.setState({chatClient: event.target.id});
+    };
+
 
     render() {
         return (
             <Box>
                 <Header/>
-                <Content message={this.state.message} onChange={this.handleChange}/>
+                <Content message={this.state.message} chatClient={this.state.chatClient}
+                         onMessageChange={this.handleMessageChange} onClientClick={this.handleClientClick}/>
             </Box>
         );
     }
