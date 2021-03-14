@@ -30,10 +30,6 @@ export const Input = ({message, onMessageChange, chatClient, onClientClick, ...p
             >
                 <SimpleGrid columns={6} spacing={6}>
                     <FormControl id="input" as={GridItem} colSpan={6}>
-                        <FormLabel fontSize="xl" fontWeight="md" lineHeight="6"
-                                   color={useColorModeValue('gray.700', 'gray.50')}>
-                            Input
-                        </FormLabel>
                         <Textarea placeholder="Enter your message here to have it converted to emojis"
                                   defaultValue={message} mt={1} rows={3} shadow="sm" focusBorderColor="brand.400"
                                   fontSize={{sm: 'sm'}} onChange={onMessageChange}/>
