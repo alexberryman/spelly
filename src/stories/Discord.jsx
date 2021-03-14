@@ -64,8 +64,6 @@ export const alphabetWhiteMapping = {
 export function getEmojiCodeSnippet(message) {
     if (message === null) return <div/>;
     let inputArray = message.split('');
-    console.log('discord');
-
 
     function buildCodeSnippet(c) {
         switch (c) {
