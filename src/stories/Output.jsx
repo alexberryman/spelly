@@ -16,13 +16,9 @@ export const Output = ({message, ...props}) => {
                 <p color={useColorModeValue('gray.50', 'gray.900')}>{emojiCodeSnippet}</p>
             </Stack>
             <Box px={{base: 4, sm: 6}} py={3} bg={useColorModeValue('gray.50', 'gray.900')} textAlign="right">
-                <Button bg='purple' color='white' _hover={{bg: 'green', shadow: ''}} fontWeight="md" onClick={onCopy}>
-                    <Stack direction='horizontal'>
-                    <CopyIcon/>
-                    <Box>
-                        Copy
-                    </Box>
-                    </Stack>
+                <Button bg='purple' color='white' _hover={{bg: 'green', shadow: ''}} fontWeight="md" onClick={onCopy}
+                        leftIcon={<CopyIcon/>}>
+                    Copy
                 </Button>
             </Box>
         </Box>
