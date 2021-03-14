@@ -8,6 +8,7 @@ import Separator from './Separator';
 
 export default function Content(props) {
     const showThings = props.message.length;
+    let color = useColorModeValue('gray.600', 'gray.400');
     return (
         <Box bg={useColorModeValue('gray.50', 'inherit')} p={10}>
             <Box>
@@ -17,55 +18,57 @@ export default function Content(props) {
                             <Heading fontSize="lg" fontWeight="md" lineHeight="6">
                                 Input
                             </Heading>
-                            <Text mt={1} fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')}>
+                            <Text mt={1} fontSize="sm" color={color}>
                                 Enter the text you want to be converted to emojis!
                             </Text>
                         </Box>
                     </GridItem>
                     <GridItem mt={[5, null, 0]} colSpan={{md: 2}}>
-                        <Input message={props.message} onMessageChange={props.onMessageChange} chatClient={props.chatClient} onClientClick={props.onClientClick}/>
+                        <Input message={props.message} onMessageChange={props.onMessageChange}
+                               chatClient={props.chatClient} onClientClick={props.onClientClick}/>
                     </GridItem>
                 </SimpleGrid>
             </Box>
 
-            <Separator/>
-            <Box mt={[10, 0]}>
-                <SimpleGrid display={{base: 'initial', md: 'grid'}} columns={{md: 3}} spacing={{md: 6}}>
-                    <GridItem colSpan={{md: 1}}>
-                        <Box px={[4, 0]}>
-                            <Heading fontSize="lg" fontWeight="medium" lineHeight="6">
-                                Preview
-                            </Heading>
-                            <Text mt={1} fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')}>
-                                See a preview of what the emojis will look like in your chat client
-                            </Text>
-                        </Box>
-                    </GridItem>
-                    <GridItem mt={[5, null, 0]} colSpan={{md: 2}}>
-                        {showThings ? <Preview message={props.message} chatClient={props.chatClient}/> : null}
-                    </GridItem>
-                </SimpleGrid>
-            </Box>
+            {showThings ? <Box><Separator/>
+                <Box mt={[10, 0]}>
+                    <SimpleGrid display={{base: 'initial', md: 'grid'}} columns={{md: 3}} spacing={{md: 6}}>
+                        <GridItem colSpan={{md: 1}}>
+                            <Box px={[4, 0]}>
+                                <Heading fontSize="lg" fontWeight="medium" lineHeight="6">
+                                    Preview
+                                </Heading>
+                                <Text mt={1} fontSize="sm" color={color}>
+                                    See a preview of what the emojis will look like in your chat client
+                                </Text>
+                            </Box>
+                        </GridItem>
+                        <GridItem mt={[5, null, 0]} colSpan={{md: 2}}>
+                            <Preview message={props.message} chatClient={props.chatClient}/>
+                        </GridItem>
+                    </SimpleGrid>
+                </Box>
+            </Box> : null}
 
-            <Separator/>
-
-            <Box mt={[10, 0]}>
-                <SimpleGrid display={{base: 'initial', md: 'grid'}} columns={{md: 3}} spacing={{md: 6}}>
-                    <GridItem colSpan={{md: 1}}>
-                        <Box px={[4, 0]}>
-                            <Heading fontSize="lg" fontWeight="medium" lineHeight="6">
-                                Output
-                            </Heading>
-                            <Text mt={1} fontSize="sm" color={useColorModeValue('gray.600', 'gray.400')}>
-                                Copy and Paste this code into your chat client.
-                            </Text>
-                        </Box>
-                    </GridItem>
-                    <GridItem mt={[5, null, 0]} colSpan={{md: 2}}>
-                        {showThings ? <Output message={props.message} chatClient={props.chatClient}/> : null}
-                    </GridItem>
-                </SimpleGrid>
-            </Box>
+            {showThings ? <Box><Separator/>
+                <Box mt={[10, 0]}>
+                    <SimpleGrid display={{base: 'initial', md: 'grid'}} columns={{md: 3}} spacing={{md: 6}}>
+                        <GridItem colSpan={{md: 1}}>
+                            <Box px={[4, 0]}>
+                                <Heading fontSize="lg" fontWeight="medium" lineHeight="6">
+                                    Output
+                                </Heading>
+                                <Text mt={1} fontSize="sm" color={color}>
+                                    Copy and Paste this code into your chat client.
+                                </Text>
+                            </Box>
+                        </GridItem>
+                        <GridItem mt={[5, null, 0]} colSpan={{md: 2}}>
+                            <Output message={props.message} chatClient={props.chatClient}/>
+                        </GridItem>
+                    </SimpleGrid>
+                </Box>
+            </Box> : null}
         </Box>
     );
 }
