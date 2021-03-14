@@ -34,6 +34,18 @@ This document tracks how and why the UI of Spelly has changed
 ### Impression of ChakraUI
 - :heavy_check_mark: Built-in dark/light theme swapping support via [useColorMode](https://chakra-ui.com/docs/features/color-mode#setup)
 - :heavy_check_mark: Nicely organized [docs](https://chakra-ui.com/docs/form/button#import) with visual examples followed by code snippet
+- :heavy_check_mark: Useful, elegant looking component library from community member for inspiration [choc-ui.tech](https://choc-ui.tech/)  
 - :heavy_check_mark: Named properties for all the CSS properties being applied to a component
 - :x: smaller community and StackOverflow content
 - :heavy_check_mark: Active community on Discord
+
+## Button group for chat client and remove upper buttons
+
+| Light |  Dark |
+| ----- | ----- |
+|![Light Chakra](./images/interface_screenshots/03-light-chakra-components.png)   |   ![Dark Chakra](./images/interface_screenshots/03-dark-chakra-components.png) |
+
+### Critique of UI
+- :heavy_check_mark: removed hidden knowledge of which chat clients are supported by swaping drop-down for button group where all choices are visible
+- :x: The Input/Preview/Output headings eat a lot of vertical space on mobile and you have to scroll to see the copy button
+- :heavy_check_mark: Less buttons make the UI cleaner and keeps the focus on the core feature of Spelly

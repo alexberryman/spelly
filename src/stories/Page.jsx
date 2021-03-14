@@ -7,7 +7,7 @@ import Content from './Content';
 export class Page extends React.Component {
     state = {
         message: this.props.message ? this.props.message : '',
-        chatClient: this.props.chatClient ? this.props.chatClient : 'discord',
+        chatClient: this.props.chatClient ? this.props.chatClient : 'slack',
     };
 
     handleMessageChange = event => {
