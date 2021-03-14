@@ -1,11 +1,11 @@
 import React from 'react';
 import {Box, chakra, Flex, IconButton, Link, useColorMode, useColorModeValue} from '@chakra-ui/react';
 import {FaMoon, FaSun} from 'react-icons/fa';
-import sLogo from './assets/alphabet-white/s.png';
-import pLogo from './assets/alphabet-white/p.png';
-import eLogo from './assets/alphabet-white/e.png';
-import lLogo from './assets/alphabet-white/l.png';
-import yLogo from './assets/alphabet-white/y.png';
+import sLogo from './assets/slack/s.png';
+import pLogo from './assets/slack/p.png';
+import eLogo from './assets/slack/e.png';
+import lLogo from './assets/slack/l.png';
+import yLogo from './assets/slack/y.png';
 
 export const Header = ({...props}) => {
     const bg = useColorModeValue('white', 'gray.800');

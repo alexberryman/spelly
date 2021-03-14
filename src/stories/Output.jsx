@@ -2,12 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Box, Button, Stack, useClipboard, useColorModeValue} from '@chakra-ui/react';
 import {CopyIcon} from '@chakra-ui/icons';
-import p from './assets/alphabet-white/p.png';
-import {getEmojiCodeSnippet} from './Slack';
+import {getEmojiCodeSnippet as slackGetEmojiCodeSnippet} from './Slack';
+import {getEmojiCodeSnippet as discordGetEmojiCodeSnippet} from './Discord';
 
 
-export const Output = ({message, ...props}) => {
-    let emojiCodeSnippet = getEmojiCodeSnippet(message);
+export const Output = ({message, chatClient, ...props}) => {
+    let emojiCodeSnippet = [];
+    switch (chatClient){
+        case 'slack':
+            emojiCodeSnippet = slackGetEmojiCodeSnippet(message);
+            break;
+        case 'discord':
+            emojiCodeSnippet = discordGetEmojiCodeSnippet(message);
+            break;
+        default:
+            emojiCodeSnippet = slackGetEmojiCodeSnippet(message);
+            break;
+    }
+
     const {onCopy} = useClipboard(emojiCodeSnippet.join(''));
 
     return (
@@ -27,10 +39,12 @@ export const Output = ({message, ...props}) => {
 
 Output.propTypes = {
     message: PropTypes.string.isRequired,
+    chatClient: PropTypes.string.isRequired,
     onCopy: PropTypes.func,
 };
 
 Output.defaultProps = {
     message: '',
+    chatClient: '',
     onCopy: undefined,
 };

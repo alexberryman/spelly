@@ -15,7 +15,6 @@ import {
 import {FaDiscord, FaSlack} from 'react-icons/fa';
 
 export const Input = ({message, onMessageChange, chatClient, onClientClick, ...props}) => {
-    console.log('chatClient', chatClient);
     return (
         <chakra.form
             shadow="base"

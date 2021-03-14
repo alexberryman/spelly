@@ -42,7 +42,7 @@ export default function Content(props) {
                         </Box>
                     </GridItem>
                     <GridItem mt={[5, null, 0]} colSpan={{md: 2}}>
-                        {showThings ? <Preview message={props.message}/> : null}
+                        {showThings ? <Preview message={props.message} chatClient={props.chatClient}/> : null}
                     </GridItem>
                 </SimpleGrid>
             </Box>
@@ -62,7 +62,7 @@ export default function Content(props) {
                         </Box>
                     </GridItem>
                     <GridItem mt={[5, null, 0]} colSpan={{md: 2}}>
-                        {showThings ? <Output message={props.message}/> : null}
+                        {showThings ? <Output message={props.message} chatClient={props.chatClient}/> : null}
                     </GridItem>
                 </SimpleGrid>
             </Box>

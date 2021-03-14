@@ -15,7 +15,6 @@ export class Page extends React.Component {
     };
 
     handleClientClick = event => {
-        console.log('clientClick', event);
         this.setState({chatClient: event.target.id});
     };
 
