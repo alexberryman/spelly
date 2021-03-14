@@ -45,8 +45,8 @@ export const Input = ({message, onMessageChange, chatClient, onClientClick, ...p
                             Chat Client
                         </FormLabel>
                         <ButtonGroup isAttached={true} spacing={0}>
-                            <Button id='slack' leftIcon={<FaSlack />} isActive={chatClient === 'slack'} _active={{bg: 'purple'}} onClick={onClientClick}>Slack</Button>
-                            <Button id='discord' leftIcon={<FaDiscord />} isActive={chatClient === 'discord'} _active={{bg: 'purple'}} onClick={onClientClick}>Discord</Button>
+                            <Button id='slack' leftIcon={<FaSlack />} isActive={chatClient === 'slack'} _active={{bg: 'purple', color: 'white'}} onClick={onClientClick}>Slack</Button>
+                            <Button id='discord' leftIcon={<FaDiscord />} isActive={chatClient === 'discord'} _active={{bg: 'purple', color: 'white'}} onClick={onClientClick}>Discord</Button>
                         </ButtonGroup>
                     </FormControl>
                 </SimpleGrid>
