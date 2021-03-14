@@ -8,7 +8,7 @@ import {getEmojiCodeSnippet} from './Slack';
 
 export const Output = ({message, ...props}) => {
     let emojiCodeSnippet = getEmojiCodeSnippet(message);
-    const {onCopy} = useClipboard(emojiCodeSnippet);
+    const {onCopy} = useClipboard(emojiCodeSnippet.join(''));
 
     return (
         <Box shadow="base" rounded={[null, 'md']} overflow={{sm: 'hidden'}}>
