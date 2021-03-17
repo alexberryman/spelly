@@ -8,7 +8,7 @@ import lLogo from './assets/slack/l.png';
 import yLogo from './assets/slack/y.png';
 
 export const Header = ({...props}) => {
-    const bg = useColorModeValue('white', 'gray.800');
+    const bg = useColorModeValue('gray.50', 'gray.900');
     const SwitchIcon = useColorModeValue(FaMoon, FaSun);
     const {toggleColorMode: toggleMode} = useColorMode();
     const text = useColorModeValue('dark', 'light');

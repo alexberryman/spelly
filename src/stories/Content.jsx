@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 export default function Content(props) {
     const showThings = props.message.length;
     return (
-        <Box bg={useColorModeValue('gray.50', 'inherit')} pt={2}>
+        <Box pt={2}>
             <Box>
                 <Grid templateColumns="repeat(8, 1fr)" gap={3}>
                     <GridItem colStart={2} colEnd={8}>
