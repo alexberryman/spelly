@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Grid, GridItem, useColorModeValue} from '@chakra-ui/react';
+import {Box, Grid, GridItem} from '@chakra-ui/react';
 import {Input} from './Input';
 import {Preview} from './Preview';
 import {Output} from './Output';
