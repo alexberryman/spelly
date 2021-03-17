@@ -7,10 +7,9 @@ import PropTypes from 'prop-types';
 
 export default function Content(props) {
     const showThings = props.message.length;
-    let color = useColorModeValue('gray.600', 'gray.400');
     return (
         <Box bg={useColorModeValue('gray.50', 'inherit')} pt={2}>
-            <Box centerContent>
+            <Box>
                 <Grid templateColumns="repeat(8, 1fr)" gap={3}>
                     <GridItem colStart={2} colEnd={8}>
                         <Input message={props.message} onMessageChange={props.onMessageChange}
@@ -20,7 +19,7 @@ export default function Content(props) {
             </Box>
 
             {showThings ? <Box pt={4}>
-                <Box mt={[10, 0]} centerContent>
+                <Box mt={[10, 0]}>
                     <Grid templateColumns="repeat(8, 1fr)" gap={3}>
                         <GridItem colStart={2} colEnd={8}>
                             <Preview message={props.message} chatClient={props.chatClient}/>
@@ -30,7 +29,7 @@ export default function Content(props) {
             </Box> : null}
 
             {showThings ? <Box pt={4}>
-                <Box mt={[10, 0]} centerContent>
+                <Box mt={[10, 0]}>
                     <Grid templateColumns="repeat(8, 1fr)" gap={3}>
                         <GridItem colStart={2} colEnd={8}>
                             <Output message={props.message} chatClient={props.chatClient}/>
