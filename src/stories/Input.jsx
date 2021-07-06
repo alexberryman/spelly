@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-    chakra,
-    FormControl,
-    FormLabel,
-    GridItem,
     Button,
     ButtonGroup,
+    chakra,
+    FormControl,
+    GridItem,
     SimpleGrid,
     Stack,
     Textarea,
@@ -36,10 +35,6 @@ export const Input = ({message, onMessageChange, chatClient, onClientClick, ...p
                     </FormControl>
 
                     <FormControl as={GridItem} colSpan={[6, 3]}>
-                        <FormLabel for="client" fontSize="sm" fontWeight="md"
-                                   color={useColorModeValue('gray.700', 'gray.50')}>
-                            Chat Client
-                        </FormLabel>
                         <ButtonGroup isAttached={true} spacing={0}>
                             <Button id='slack' leftIcon={<FaSlack />} isActive={chatClient === 'slack'} _active={{bg: 'purple', color: 'white'}} onClick={onClientClick}>Slack</Button>
                             <Button id='discord' leftIcon={<FaDiscord />} isActive={chatClient === 'discord'} _active={{bg: 'purple', color: 'white'}} onClick={onClientClick}>Discord</Button>
