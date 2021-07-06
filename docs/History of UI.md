@@ -49,3 +49,13 @@ This document tracks how and why the UI of Spelly has changed
 - :heavy_check_mark: removed hidden knowledge of which chat clients are supported by swaping drop-down for button group where all choices are visible
 - :x: The Input/Preview/Output headings eat a lot of vertical space on mobile and you have to scroll to see the copy button
 - :heavy_check_mark: Less buttons make the UI cleaner and keeps the focus on the core feature of Spelly
+
+## Simplify UI by removing side panels
+
+| Light |  Dark |
+| ----- | ----- |
+|![Light Chakra](./images/interface_screenshots/04-light-simplify-ui.png)   |   ![Dark Chakra](./images/interface_screenshots/04-dark-simplify-ui.png) |
+
+### Critique of UI
+- :heavy_check_mark: Remove side panel helper text that explained the obvious purpose each element
+- :heavy_check_mark: Remove section separators and rely on drop-shadow to lighten the page
